@@ -30,10 +30,7 @@ class MainActivity : ComponentActivity() {
         setContent {
             DCSG3G4_Practical4Theme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Greeting(
-                        name = "Android",
-                        modifier = Modifier.padding(innerPadding)
-                    )
+
                 }
             }
         }
@@ -44,9 +41,7 @@ class MainActivity : ComponentActivity() {
 fun AppNavigation(modifier: Modifier = Modifier) {
     val navController = rememberNavController()
     NavHost(
-        navController = navController,
-        startDestination = "form",
-        modifier = modifier
+        navController = navController, startDestination = "form", modifier = modifier
     ) {
         // First destination: the input form.
         composable("form") {
@@ -54,16 +49,12 @@ fun AppNavigation(modifier: Modifier = Modifier) {
         }
         // Second destination: takes a "name" argument in its route.
         composable(
-            route = "result/{name}",
-            arguments = listOf(
-                navArgument("name")
-                { type = NavType.StringType })
+            route = "result/{name}", arguments = listOf(
+                navArgument("name") { type = NavType.StringType })
         ) { backStackEntry ->
-            val name =
-                backStackEntry.arguments?.getString("name") ?: ""
+            val name = backStackEntry.arguments?.getString("name") ?: ""
             ResultScreen(
-                name = name, navController =
-                    navController
+                name = name, navController = navController
             )
         }
     }
@@ -79,13 +70,6 @@ fun FormScreen(navController: NavHostController) {
     TODO("Not yet implemented")
 }
 
-@Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
-}
 
 @Preview(showBackground = true)
 @Composable
@@ -93,19 +77,8 @@ fun ImagePreview() {
     DCSG3G4_Practical4Theme {
         Image(
             painter = painterResource(
-                id =
-                    R.drawable.ic_launcher_foreground
-            ),
-            contentDescription = "App logo",
-            modifier = Modifier.size(120.dp)
+                id = R.drawable.ic_launcher_foreground
+            ), contentDescription = "App logo", modifier = Modifier.size(120.dp)
         )
-    }
-}
-
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    DCSG3G4_Practical4Theme {
-        Greeting("Android")
     }
 }
