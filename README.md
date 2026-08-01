@@ -1,2 +1,2 @@
-# DCSG3G4_Practical4
-Temporary CodeSave for 2026-Jul-26 Practical.
+# Practical 1
+Practical 1 does not have much to refer to. It includes the absolute basics of Android Studio and Mobile Application Development.
