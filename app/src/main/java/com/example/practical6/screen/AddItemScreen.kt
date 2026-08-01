@@ -1,4 +1,4 @@
-                    package com.example.practical6.screen
+package com.example.practical6.screen
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -142,6 +142,12 @@ fun AddItemScreen(
             //Checkbox with label
             Row(
                 modifier = Modifier
+                    .fillMaxWidth()
+                    .selectable(
+                        selected = urgent,
+                        onClick = { urgent = !urgent },
+                        role = Role.Checkbox
+                    )
             ) { }
         }
     }
