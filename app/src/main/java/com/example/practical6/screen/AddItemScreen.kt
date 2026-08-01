@@ -138,6 +138,11 @@ fun AddItemScreen(
                     }
                 }
             }
+
+            //Checkbox with label
+            Row(
+                modifier = Modifier
+            ) { }
         }
     }
 }
