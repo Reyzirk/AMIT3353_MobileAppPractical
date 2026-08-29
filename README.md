@@ -4,7 +4,7 @@ This practical introduces **Supabase**, an alternative to Firebase that provides
 
 In this practical, you will build an **Android application using Jetpack Compose** that connects to a Supabase PostgreSQL database and performs **CRUD (Create, Read, Update, Delete)** operations on contact records.
 
-> 📚 **Module:** BMIT2073 Mobile Application Development
+> 📚 **Module:** AMIT3353 Mobile Application Development
 > 🧪 **Practical:** 9
 > ☁️ **Topic:** Supabase – Backend as a Service (BaaS)
 
