@@ -1,6 +1,7 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.compose)
+    alias(libs.plugins.kotlin.serialization)
 }
 
 android {
@@ -11,7 +12,7 @@ android {
 
     defaultConfig {
         applicationId = "com.example.dcsg1_practical9"
-        minSdk = 24
+        minSdk = 26
         targetSdk = 37
         versionCode = 1
         versionName = "1.0"
@@ -36,8 +37,15 @@ android {
 }
 
 dependencies {
-    implementation(platform("io.github.jan-tennert.supabase:bom:3.8.0"))
-    implementation("io.github.jan-tennert.supabase:postgrest-kt")
+    // Core icons (Contains basic icons like ArrowBack, Menu, Share, etc.)
+    implementation(libs.androidx.material3)
+
+    // Extended icons (Contains 10,000+ total variations. Warning: Adds to build time!)
+    implementation(libs.androidx.compose.material.icons.extended)
+    implementation(platform(libs.bom))
+    implementation(libs.postgrest.kt)
+    // Ktor Android engine
+    implementation(libs.ktor.client.android)
     implementation(platform(libs.androidx.compose.bom))
     implementation(libs.androidx.activity.compose)
     implementation(libs.androidx.compose.material3)
